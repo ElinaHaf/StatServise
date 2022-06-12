@@ -12,11 +12,8 @@ public class StatsService {
 
     public int averageSalesPerMonth(int[] sales) {
         int averageSales;
-        int sum = 0;
+        int sum = sumSales(sales);
 
-        for (int sale = 0; sale < sales.length; sale++) {
-            sum = sum + sales[sale];
-        }
         averageSales = sum / sales.length;
         return averageSales;
     }
@@ -60,13 +57,7 @@ public class StatsService {
     }
 
     public int minAverageSalesMonth(int[] sales) {
-        int averageSales;
-        int sum = 0;
-
-        for (int sale = 0; sale < sales.length; sale++) {
-            sum = sum + sales[sale];
-        }
-        averageSales = sum / sales.length;
+        int averageSales = averageSalesPerMonth(sales);
 
         int minMonths = 0;
         int totalMinMonths = 0;
@@ -88,13 +79,7 @@ public class StatsService {
     }
 
     public int maxAverageSalesMonth(int[] sales) {
-        int averageSales;
-        int sum = 0;
-
-        for (int sale = 0; sale < sales.length; sale++) {
-            sum = sum + sales[sale];
-        }
-        averageSales = sum / sales.length;
+        int averageSales = averageSalesPerMonth(sales);
 
         int maxMonths = 0;
         int totalMaxMonths = 0;
